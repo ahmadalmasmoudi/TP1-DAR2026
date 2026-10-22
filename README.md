@@ -1,32 +1,29 @@
-# TP 1 : Les sockets en mode connecté TCP Activité 1-1 : Première connexion Client/Serveur
-**Réalisé par :** Masmoudi Ahmed 
+# Étape 2 : Création du service de multiplication
 
+**Nom :** Masmoudi
 
-**Filière :** LSI3
+**Prénom :** Ahmed
 
-**Groupe TP :** 2.1
-## Étape 1 : Préparation de l’environnement Git
+## 1. Réalisation du service de multiplication (Questions 1 à 3)
 
-Vérification de l’installation de Git sur le système à l’aide de la commande `git --version`, afin de confirmer que Git est installé et prêt à être utilisé pour la gestion des versions du projet.
+Le client saisit un entier au clavier et l’envoie au serveur à travers une connexion TCP. Le serveur reçoit cet entier, calcule son produit par 5 et renvoie le résultat au client, qui l’affiche. Plusieurs valeurs positives, négatives et nulles sont testées afin de vérifier le bon fonctionnement du programme.
 
-![Vérification de Git](captures/et1.png)
+![](captures/et01.png)
 
-## Étape 2 : Préparation de l’environnement Java
+![](captures/et02.png)
 
-Vérification de la version de Java installée à l’aide de la commande `java --version`, puis création du répertoire du projet `votreNomPrenom_LSI3_DevAppReparties` pour organiser le travail.
-![Préparation de l’environnement Java](captures/et2.1.png)
+## 2. Utilisation de DataInputStream et DataOutputStream (Question 4)
 
-![Préparation de l’environnement Java](captures/et2.2.png)
+Les classes `DataInputStream` et `DataOutputStream` sont utilisées pour lire et envoyer des entiers sous forme binaire entre le client et le serveur. Les méthodes `readInt()` et `writeInt()` permettent de transmettre correctement les entiers positifs, négatifs et nuls sans conversion en chaînes de caractères.
 
-![Préparation de l’environnement Java](captures/et2.3.png)
-## Étape 3 : Création du serveur
+![](captures/et03.png)
 
-Création du projet Java `TP1-DAR2026` et du package `serverPackage` contenant la classe `Server`. Le code du serveur est complété, puis l’application est exécutée afin de vérifier que le serveur démarre et attend la connexion d’un client.
+![](captures/et04.png)
 
-![Création et exécution du serveur](captures/tp1et3.png)
+## 3. Gestion de plusieurs saisies et arrêt de la communication (Question 5)
 
-## Étape 4 : Création du client
+Le client peut saisir plusieurs entiers successivement. Après chaque saisie différente de zéro, le serveur calcule le produit par 5 et renvoie le résultat au client. Lorsque le client saisit zéro, cette valeur sert de signal d’arrêt : les boucles se terminent et les sockets sont fermées des deux côtés.
 
-Création du package `clientPackage` contenant la classe `Client`, puis exécution du client pour établir une connexion avec le serveur. Les résultats affichés dans les consoles permettent de vérifier le bon fonctionnement de la communication client-serveur. Enfin, l’adresse `localhost` est remplacée par l’adresse IP du serveur.
+![](captures/et05.png)
 
-![Création et exécution du client](captures/et4.png)
+![](captures/et06.png)
