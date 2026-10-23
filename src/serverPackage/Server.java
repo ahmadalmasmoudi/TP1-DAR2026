@@ -12,7 +12,7 @@ public class Server {
         InetAddress ip=InetAddress.getByName("192.168.1.244");
         InetSocketAddress adresse=new InetSocketAddress(ip,1234);
         serveurSocket.bind(adresse);
-        System.out.println("Je suis un serveur en attente la connexion d'un client");
+        System.out.println("Je suis un serveur en attente la connexion d un client");
         Socket socket=serveurSocket.accept();
         System.out.println("un client est connecté");
         DataInputStream is=new DataInputStream(socket.getInputStream());

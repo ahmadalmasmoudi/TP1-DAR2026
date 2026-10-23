@@ -14,7 +14,7 @@ public class Client {
         Socket socket=new Socket();
         socket.connect(adresse);
 
-        System.out.println("je suis un client connecté");
+        System.out.println("j' suis un client connecté");
         Scanner sc=new Scanner(System.in);
         int nb;
         DataOutputStream os=new DataOutputStream(socket.getOutputStream());
