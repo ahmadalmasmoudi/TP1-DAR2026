@@ -1,29 +1,23 @@
-# Étape 2 : Création du service de multiplication
+# TP 1 : Les sockets en mode connecté TCP
+
+## Activité 1-3 : Amélioration sur le service de calculatrice
 
 **Nom :** Masmoudi
 
 **Prénom :** Ahmed
 
-## 1. Réalisation du service de multiplication (Questions 1 à 3)
+## Étape 1 : Connexion Client/Serveur sur deux machines distinctes
 
-Le client saisit un entier au clavier et l’envoie au serveur à travers une connexion TCP. Le serveur reçoit cet entier, calcule son produit par 5 et renvoie le résultat au client, qui l’affiche. Plusieurs valeurs positives, négatives et nulles sont testées afin de vérifier le bon fonctionnement du programme.
+Cette étape consiste à adapter l’application Client/Serveur développée dans l’Activité 1-2 afin de permettre la communication entre deux machines distinctes connectées au même réseau local. Les classes `InetAddress` et `InetSocketAddress` sont utilisées pour gérer l’adresse IP et le port de communication. Le serveur écoute sur l’adresse IP de sa machine et sur un port choisi, tandis que le client utilise l’adresse IP du serveur pour établir la connexion TCP.
 
-![](captures/et01.png)
+![Capture 1 : Code et exécution du serveur](captures/act3.2.png)
 
-![](captures/et02.png)
+![Capture 2 : Code et exécution du client](captures/act3.1.png)
 
-## 2. Utilisation de DataInputStream et DataOutputStream (Question 4)
+## Étape 2 : Amélioration du service de calculatrice
 
-Les classes `DataInputStream` et `DataOutputStream` sont utilisées pour lire et envoyer des entiers sous forme binaire entre le client et le serveur. Les méthodes `readInt()` et `writeInt()` permettent de transmettre correctement les entiers positifs, négatifs et nuls sans conversion en chaînes de caractères.
+Cette étape consiste à enrichir le service de calculatrice développé précédemment en ajoutant de nouvelles fonctionnalités à l’application Client/Serveur.
 
-![](captures/et03.png)
+![Capture 1 : Code et exécution du serveur](captures/ett2.1.png)
 
-![](captures/et04.png)
-
-## 3. Gestion de plusieurs saisies et arrêt de la communication (Question 5)
-
-Le client peut saisir plusieurs entiers successivement. Après chaque saisie différente de zéro, le serveur calcule le produit par 5 et renvoie le résultat au client. Lorsque le client saisit zéro, cette valeur sert de signal d’arrêt : les boucles se terminent et les sockets sont fermées des deux côtés.
-
-![](captures/et05.png)
-
-![](captures/et06.png)
+![Capture 2 : Code et exécution du client](captures/ett2.2.png)
